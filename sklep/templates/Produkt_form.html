@@ -1,0 +1,21 @@
+{% extends 'glowny.html' %}
+{% block tytul %} Produkt {% endblock %}
+{% block strona %}
+
+    <div class="card">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            {% if nowy %}
+                <button class="btn btn-primary" type="submit">Dodaj produkt</button>
+            {% else %}
+                <button class="btn btn-primary"  type="submit">Dodaj produkt</button>
+            {% endif %}
+            <a class="btn btn-danger m-4"  href="{% url 'tablety' %}" >Cofnij</a>
+        </form>
+    </div>
+{% for ocena in oceny %}
+<h4>Gwiazdki: {{ ocena.ocena }}</h4>
+<p>Opinia: {{ ocena.recenzja }}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'glowny.html' %}
+{% block tytul %} Usuwanie {% endblock %}
+{% block strona %}
+
+    <h1 class="text-center">Czy na pewno chcesz usunac Produkt? {{produkt.producent}} {{produkt.model}} </h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="d-flex  justify-content-center">
+            <button class="btn btn-danger m-4" type="submit">Usun</button>
+            <a class="btn btn-primary m-4"  href="{% url 'tablety' %}" >Cofnij</a>
+        </div>
+    </form>
+
+
+{% endblock %}

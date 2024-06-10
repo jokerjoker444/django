@@ -1,0 +1,13 @@
+{% extends 'glowny.html' %}
+{% block tytul %} Ocen {% endblock %}
+{% block strona %}
+
+    <h1>Ocen produkt:  {{produkt.producent}} {{produkt.model}}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-success m-4" type="submit">Ocen</button>
+        <a class="btn btn-danger m-4"  href="{% url 'tablety' %}" >Cofnij</a>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'glowny.html' %}
+{% block tytul %} Usuwanie {% endblock %}
+{% block strona %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="mb-3 m-4">
+            <label for="id_username" class="form-label">Login:</label>
+            <input type="text" class="form-control" id="id_username" name="username">
+        </div>
+        <div class="mb-3 m-4">
+            <label for="id_password">Password:</label>
+            <input type="password" class="form-control" id="id_password" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary m-4">Zaloguj</button>
+
+    </form>
+
+{% endblock %}
